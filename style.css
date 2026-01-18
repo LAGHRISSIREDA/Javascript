@@ -1,0 +1,25 @@
+.Test{
+    width: 100%;
+    height: 100vh;
+    background-color: red;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.spiro{
+    color: aliceblue;
+}
+
+img{
+    width: 20%;
+}
+
+.backgroundColor {
+    background-color: Red;
+}
+.max{
+     pointer-events: none;
+    opacity: 0.6;
+    cursor: not-allowed;
+}
