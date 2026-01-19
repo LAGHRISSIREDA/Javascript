@@ -175,5 +175,62 @@ class LinkedList{
       throw new Error(`List is Empty`);
     }
     
+    if(this.head.data === data){
+      this.head = this.head.next;
+      this.size--;
+      return;
+    }
+
+    let current = this.head;
+
+    while(current.next){
+      if(current.next.data === data){
+        current.next = current.next.next;
+        this.size--;
+        return;
+      }
+      current = current.next;
+    }
+    throw new Error(`Node with data ${data} Not Found in List !`);
+  }
+
+  toArray(){
+    const arr = [];
+
+    let current = this.head;
+
+    while(current){
+      arr.push(current.data);
+      current = current.next;
+    }
+    return arr;
+  }
+
+  get length(){
+    return this.size;
   }
 }
+
+
+
+console.log('this is the test of my LinkedList')
+
+let letters = new LinkedList();
+
+letters.addLast("A");
+letters.addLast("B");
+letters.addLast("C");
+letters.addLast("D");
+letters.addLast("E");
+
+console.log('this is the letters : '+letters.toArray())
+
+letters.addFirst("AA");
+letters.addLast("ZZ")
+
+console.log('the Table after LinkedList after : '+letters.toArray())
+
+letters.addAfter('D',"Reda")
+console.log('the Table after LinkedList after : '+letters.toArray())
+
+console.log('The length of this LinkeList is  : '+letters.length)
