@@ -1,25 +1,19 @@
-.Test{
-    width: 100%;
-    height: 100vh;
-    background-color: red;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+html {
+  width: 100%;
+  height: inherit;
+  background: #dddddd;
 }
 
-.spiro{
-    color: aliceblue;
+canvas {
+  display: block;
 }
 
-img{
-    width: 20%;
+body {
+  margin: 0;
 }
 
-.backgroundColor {
-    background-color: Red;
-}
-.max{
-     pointer-events: none;
-    opacity: 0.6;
-    cursor: not-allowed;
+button {
+  position: absolute;
+  top: 5px;
+  left: 5px;
 }

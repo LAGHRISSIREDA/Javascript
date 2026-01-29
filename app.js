@@ -1,32 +1,31 @@
-class Node{
-  constructor(data){
-    this.data = data;
-    this.left = null;
-    this.right = null;
-  }
+const btn = document.querySelector('button');
+const canvas = document.querySelector('canvas');
+const ctx = canvas.getContext('2d');
+
+canvas.width = document.documentElement.clientWidth;
+canvas.height = document.documentElement.clientHeight;
+
+//declare Random Function
+function random(number){
+  return Math.floor(Math.random()*number);
 }
 
-//create Root and Nodes
-const rootNodeA = new Node("A");
-const nodeB = new Node("B");
-const nodeC = new Node("C");
-const nodeD = new Node("D");
-const nodeE = new Node("E");
-const nodeF = new Node("F");
-const nodeG = new Node("G");
+//declare draw function
+function draw(){
+  ctx.clearRect(0,0,canvas.width,canvas.height);
+  for(let i=0 ; i<100 ; i++){
+    ctx.beginPath();
+    ctx.fillStyle = "rgb(255 0 0 / 50%)";
+    ctx.arc(
+      random(canvas.width),
+      random(canvas.height),
+      random(50),
+      0,
+      2*Math.PI
+    );
+    ctx.fill();
+  }
 
+}
 
-//Child of node A (root)
-rootNodeA.left = nodeB;
-rootNodeA.right = nodeC;
-
-//child of node B
-
-nodeB.left = nodeD;
-nodeB.right=nodeE;
-
-//Child Of Node E
-nodeE.left = nodeF;
-nodeE.right=nodeG;
-
-console.log(`Child of node E = ${nodeG.data}`)
+btn.addEventListener('click',draw);
